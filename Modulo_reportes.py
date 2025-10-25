@@ -1,5 +1,5 @@
 # ===============================================
-# MÓDULO DE REPORTES DE CITAS MÉDICAS (versión simple)
+# REPORTES DE CITAS MÉDICAS
 # ===============================================
 
 import pandas as pd       # Para trabajar con tablas (DataFrames)

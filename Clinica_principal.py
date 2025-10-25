@@ -19,7 +19,7 @@ def Sistema_Medico_Principal():
         print('========================================')
         print('1. Módulo de Pacientes 🧑‍🤝‍🧑')
         print('2. Módulo de Citas Médicas 📅')
-        print('3. Módulo de Reportes (CSV \ Excel) 📈')
+        print('3. Módulo de Reportes (CSV / EXCEL)) 📈')
         print('4. Salir del Sistema 🚪')
         print('----------------------------------------')
 

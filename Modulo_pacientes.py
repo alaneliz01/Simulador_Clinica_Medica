@@ -64,7 +64,7 @@ def _obtener_datos_paciente(df):
             break
 
     datos["Sexo"] = _input_validado("Sexo (M/F): ", str, lambda x: x.upper() in ["M", "F"], "Debe ser M o F").upper()
-    datos["Edad"] = _input_validado("Edad: ", int, lambda x: 0 < x < 150, "Edad no válida.")
+    datos["Edad"] = _input_validado("Edad: ", float, lambda x: 0 < x < 150, "Edad no válida.")
     datos["Teléfono"] = _input_validado("Teléfono: ", str, lambda x: x.isdigit() and len(x) >= 7, "Teléfono no válido.")
     datos["Teléfono"] = int(datos["Teléfono"])
     datos["Estatura"] = _input_validado("Estatura (cm): ", float, lambda x: 30 < x < 300, "Estatura fuera de rango.")
@@ -89,7 +89,7 @@ def _obtener_datos_paciente(df):
     return datos
 
 # =====================================================================
-# INICIO DE MODULO PACIENTES
+# FUNCIÓN PRINCIPAL
 # =====================================================================
 
 def pacientes():
@@ -99,7 +99,7 @@ def pacientes():
         limpiar()
         print("""
 ===============================
-====== Módulo Pacientes =======
+======= Módulo Pacientes ======
 ===============================
 1. Agregar paciente
 2. Ver pacientes

@@ -1,4 +1,4 @@
-def limpiar():
+def limpiar(): #Limpiar pantalla
     import os
     import platform
     sistema = platform.system()

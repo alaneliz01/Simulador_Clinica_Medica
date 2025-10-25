@@ -1,5 +1,5 @@
 # ===============================================
-# SISTEMA SIMPLE DE CITAS MÉDICAS (versión fácil)
+# SISTEMA SIMPLE DE CITAS MÉDICAS 
 # ===============================================
 
 import pandas as pd
@@ -53,7 +53,8 @@ def guardar_citas(citas_list):
     limpiar()
     if citas_list:
         df = pd.DataFrame(citas_list)
-        df['FechaHora'] = pd.to_datetime(df['Fecha_cita'] + ' ' + df['Hora_cita'])
+        # Crear columna temporal de fecha+hora para ordenar
+        df['FechaHora'] = pd.to_datetime(df['Fecha_cita'] + ' ' + df['Hora_cita'], dayfirst=True, errors='coerce')
         df = df.sort_values(by='FechaHora').drop(columns=['FechaHora'])
         df.to_csv('citas_medicas.csv', index=False)
         print(f'Se guardaron {len(citas_list)} citas.')
@@ -131,7 +132,7 @@ def eliminar_cita(citas):
         return
 
     df = pd.DataFrame(citas)
-    df['FechaHora'] = pd.to_datetime(df['Fecha_cita'] + ' ' + df['Hora_cita'])
+    df['FechaHora'] = pd.to_datetime(df['Fecha_cita'] + ' ' + df['Hora_cita'], dayfirst=True, errors='coerce')
     df = df.sort_values(by='FechaHora').reset_index(drop=True)
 
     for i, row in df.iterrows():
@@ -169,7 +170,8 @@ def mostrar_citas(citas):
         print('No hay citas registradas.')
     else:
         df = pd.DataFrame(citas)
-        df['FechaHora'] = pd.to_datetime(df['Fecha_cita'] + ' ' + df['Hora_cita'])
+        # Pandas infiere el formato automáticamente; dayfirst=True ayuda con DD-MM-YYYY
+        df['FechaHora'] = pd.to_datetime(df['Fecha_cita'] + ' ' + df['Hora_cita'], dayfirst=True, errors='coerce')
         df = df.sort_values(by='FechaHora')
         print(df[['Nombre', 'Fecha_cita', 'Hora_cita']].to_string(index=False))
 
