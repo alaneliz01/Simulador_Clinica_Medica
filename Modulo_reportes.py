@@ -88,9 +88,9 @@ def reportes():
 ===============================
 ======= Módulo Reportes ======
 ===============================
-1. Generar Reporte en Excel
-2. Generar Reporte en CSV
-3. Regresar al Menú Principal
+1. Generar Reporte en Excel 🟢
+2. Generar Reporte en CSV ⚪
+3. Regresar al Menú Principal🚪
 ===============================
 """)
 

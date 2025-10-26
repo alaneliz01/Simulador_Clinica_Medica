@@ -190,10 +190,10 @@ def Citas_medicas():
 ===============================
 ======= Módulo Citas ==========
 ===============================
-1. Registrar cita
-2. Eliminar cita
-3. Mostrar citas
-4. Regresar
+1. Registrar cita📓
+2. Eliminar cita❌
+3. Mostrar citas👁️
+4. Regresar🚪
 ===============================
 """)
 
