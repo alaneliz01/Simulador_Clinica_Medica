@@ -8,7 +8,7 @@ import os
 from datetime import datetime
 
 # -------------------------------------------------------
-# Función para limpiar la pantalla (ya no necesitas otro módulo)
+# Función para limpiar la pantalla
 # -------------------------------------------------------
 def limpiar():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -170,7 +170,6 @@ def mostrar_citas(citas):
         print('No hay citas registradas.')
     else:
         df = pd.DataFrame(citas)
-        # Pandas infiere el formato automáticamente; dayfirst=True ayuda con DD-MM-YYYY
         df['FechaHora'] = pd.to_datetime(df['Fecha_cita'] + ' ' + df['Hora_cita'], dayfirst=True, errors='coerce')
         df = df.sort_values(by='FechaHora')
         print(df[['Nombre', 'Fecha_cita', 'Hora_cita']].to_string(index=False))
@@ -187,14 +186,16 @@ def Citas_medicas():
 
     while True:
         limpiar()
-        print("=============================")
-        print("  SISTEMA DE CITAS MÉDICAS")
-        print("=============================")
-        print("1. Registrar cita")
-        print("2. Eliminar cita")
-        print("3. Mostrar citas")
-        print("4. Guardar y salir")
-        print("5. Salir sin guardar")
+        print("""
+===============================
+======= Módulo Citas ==========
+===============================
+1. Registrar cita
+2. Eliminar cita
+3. Mostrar citas
+4. Regresar
+===============================
+""")
 
         opcion = input("\nElija una opción: ").strip()
 
@@ -207,11 +208,6 @@ def Citas_medicas():
         elif opcion == '4':
             guardar_citas(citas)
             return
-        elif opcion == '5':
-            limpiar()
-            salir = input("¿Seguro que desea salir sin guardar? (s/n): ").lower()
-            if salir == 's':
-                return
         else:
             print("Opción inválida.")
             time.sleep(2)

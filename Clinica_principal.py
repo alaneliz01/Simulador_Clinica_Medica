@@ -14,14 +14,16 @@ def Sistema_Medico_Principal():
     """
     while True:
         limpiar()
-        print('========================================')
-        print('🏥 Sistema de Gestión Profesional 📊')
-        print('========================================')
-        print('1. Módulo de Pacientes 🧑‍🤝‍🧑')
-        print('2. Módulo de Citas Médicas 📅')
-        print('3. Módulo de Reportes (CSV / EXCEL)) 📈')
-        print('4. Salir del Sistema 🚪')
-        print('----------------------------------------')
+        print("""
+========================================
+🏥 Sistema de Gestión Profesional 📊
+========================================
+1. Módulo de Pacientes 🧑‍🤝‍🧑
+2. Módulo de Citas Médicas 📅
+3. Módulo de Reportes (CSV / EXCEL) 📈
+4. Salir del Sistema 🚪
+========================================
+""")
 
         try:
             opcion_principal = input('Seleccione una opción: ').strip()

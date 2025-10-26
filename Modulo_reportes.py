@@ -80,14 +80,19 @@ def reportes():
         time.sleep(2)
         return
 
+    fecha_actual = datetime.now().strftime("%Y%m%d_%H%M%S")
+
     while True:
         limpiar()
-        print("\n==============================")
-        print("     MENÚ DE REPORTES")
-        print("==============================")
-        print("1. Generar Reporte en Excel")
-        print("2. Generar Reporte en CSV")
-        print("3. Salir")
+        print("""
+===============================
+======= Módulo Reportes ======
+===============================
+1. Generar Reporte en Excel
+2. Generar Reporte en CSV
+3. Regresar al Menú Principal
+===============================
+""")
 
         opcion = input("\nElige una opción: ").strip()
         fecha_actual = datetime.now().strftime("%Y%m%d_%H%M%S")
